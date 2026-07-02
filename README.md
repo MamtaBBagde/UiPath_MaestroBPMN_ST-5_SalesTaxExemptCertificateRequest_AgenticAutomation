@@ -11,16 +11,17 @@ Environment: Staging
 
 **Setup Instructions:**
 1. Go to Orchestrtaor Studio and upload 'ST-5_SalesTaxExemptCertificateRequest.uis' file provided (you can also download it from this Git repo)
-2. In 'Shared' Folder in orchestrator, create storage bucket 'VendorEmailList_ST5' and uplaod the csv file provided 'Vendor Email List - ST5.csv'
-3. In 'Shared' Folder in orchestrator, create Index 'Index_VendorEmailList_ST5' and add storage bucekt 'VendorEmailList_ST5'
-4. Add coded agent 'CodedAgent_ST5RequestDataExtraction' and RPA workflow 'PopulateST5Certificate' in Orchestrator -> Shared Folder -> Automations -> Processes
-5. Add Integration services Microsoft Office 365 in Connections
-6. Create 'ST5 Request' Inbox in outlook with rules 'Move sales tax ST5 request to ST5 Request Inbox' -> Add a condition 'Subject or body includes' = ST5 or sales tax and 'Add an action' -> Move to: ST5 Request
-7. Create an eamil with Subject line 'ST5 Request' and email body 'Hi Team, PharmaMed Service recently delivered Patient Monitoring Equipment to WoodRidge Medical Center, 842 St Drive, NJ 07505 on 05/20/2026 under PO 274587. As part of our billing compliance process, we kindly request a copy of your valid tax-exempt certificate. Thanks, PharmaMed Service'
-8. This email will automatically moved to the 'ST5 Request' inbox, if not moved it in 'ST5 Request' inbox folder
-9. Make sure you have unattended machine configured
-10. Make sure you have PDF Adbode Acrobat installed
-11. Go to the orchestartor studio, open ST-5_SalesTaxExemptCertificateRequest and run the workflow
+2. In 'Vendor Email List - ST5.csv', add your email id which you are going to use as a valid vendor
+3. In 'Shared' Folder in orchestrator, create storage bucket 'VendorEmailList_ST5' and uplaod the csv file provided 'Vendor Email List - ST5.csv'
+4. In 'Shared' Folder in orchestrator, create Index 'Index_VendorEmailList_ST5' and add storage bucekt 'VendorEmailList_ST5'
+5. Add coded agent 'CodedAgent_ST5RequestDataExtraction' and RPA workflow 'PopulateST5Certificate' in Orchestrator -> Shared Folder -> Automations -> Processes
+6. Add Integration services Microsoft Office 365 in Connections
+7. Create 'ST5 Request' Inbox in outlook with rules 'Move sales tax ST5 request to ST5 Request Inbox' -> Add a condition 'Subject or body includes' = ST5 or sales tax and 'Add an action' -> Move to: ST5 Request
+8. Create an eamil with Subject line 'ST5 Request' and email body 'Hi Team, PharmaMed Service recently delivered Patient Monitoring Equipment to WoodRidge Medical Center, 842 St Drive, NJ 07505 on 05/20/2026 under PO 274587. As part of our billing compliance process, we kindly request a copy of your valid tax-exempt certificate. Thanks, PharmaMed Service'
+9. This email will automatically moved to the 'ST5 Request' inbox, if not moved it in 'ST5 Request' inbox folder
+10. Make sure you have unattended machine configured
+11. Make sure you have PDF Adbode Acrobat installed
+12. Go to the orchestartor studio, open ST-5_SalesTaxExemptCertificateRequest and run the workflow
 
 **Project Description:**
 
