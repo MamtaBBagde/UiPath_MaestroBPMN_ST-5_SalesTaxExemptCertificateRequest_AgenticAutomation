@@ -1,4 +1,29 @@
 # UiPath_MaestroBPMN_ST-5_SalesTaxExemptCertificateRequest_AgenticAutomation
+
+**UiPath Labs link/environment URL where I built your solution:** https://staging.uipath.com/mamtabagde/DefaultTenant
+Environment: Staging
+
+**UiPath Components:** Maestro BPMN, Agent, Coded Agent, Storage Bucket, Context Grounding, RPA, Orchestrator, Action Center, Integration Services
+
+**Agent Type:** Solution utilizes 2 agents:
+1. Autonomous Agent to verify vendor and 
+2. Coded Agent to get emnail communication data like servives provided by the vendor to the hospital/clinic, vendor full name, location of services provided and order/transaction date.
+
+**Setup Instructions:**
+1. Go to Orchestrtaor Studio and upload 'ST-5_SalesTaxExemptCertificateRequest.uis' file provided (you can also download it from this Git repo)
+2. In 'Shared' Folder in orchestrator, create storage bucket 'VendorEmailList_ST5' and uplaod the csv file provided 'Vendor Email List - ST5.csv'
+3. In 'Shared' Folder in orchestrator, create Index 'Index_VendorEmailList_ST5' and add storage bucekt 'VendorEmailList_ST5'
+4. Add coded agent 'CodedAgent_ST5RequestDataExtraction' and RPA workflow 'PopulateST5Certificate' in Orchestrator -> Shared Folder -> Automations -> Processes
+5. Add Integration services Microsoft Office 365 in Connections
+6. Create 'ST5 Request' Inbox in outlook with rules 'Move sales tax ST5 request to ST5 Request Inbox' -> Add a condition 'Subject or body includes' = ST5 or sales tax and 'Add an action' -> Move to: ST5 Request
+7. Create an eamil with Subject line 'ST5 Request' and email body 'Hi Team, PharmaMed Service recently delivered Patient Monitoring Equipment to WoodRidge Medical Center, 842 St Drive, NJ 07505 on 05/20/2026 under PO 274587. As part of our billing compliance process, we kindly request a copy of your valid tax-exempt certificate. Thanks, PharmaMed Service'
+8. This email will automatically moved to the 'ST5 Request' inbox, if not moved it in 'ST5 Request' inbox folder
+9. Make sure you have unattended machine configured
+10. Make sure you have PDF Adbode Acrobat installed
+11. Go to the orchestartor studio, open ST-5_SalesTaxExemptCertificateRequest and run the workflow
+
+**Project Description:**
+
 ST-5 Sales Tax Exemption Certificate Agentic Automation is an end-to-end intelligent automation built on UiPath Maestro BPMN that handles the entire ST-5 certificate request lifecycle from incoming email to delivered certificate with minimal human intervention.
 
 ST5 Sales Tax Exempt Certificate Request Agentic Use Case created using UiPath Maestro Flow. 
